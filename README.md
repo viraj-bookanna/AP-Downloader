@@ -33,4 +33,4 @@ python3 client.py
 
 ## Video tutorial
 
-http://exlink.freesms.us.eu.org/260/howto.mp4?hash=ac041f
+https://github.com/viraj-bookanna/AP-Downloader/assets/73843540/049d29e1-4fb0-413a-9b81-72f7f64f915a
