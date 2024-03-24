@@ -18,8 +18,8 @@ ffmpeg{proxy}{headers_crlf} -i "{inFileName}" -c copy "{outFilePath}" 1>NUL 2>"{
         f.write(converter_bat)
 	return f"{outFilePath}.bat"
 def linux_cmd():
-    headers_crlf = ' -headers "{}"'.format(r'\r\n'.join([f'{h}: {headers[h]}' for h in headers]))
-    return f'ffmpeg{proxy}{headers_crlf} -i "{inFileName}" -c copy "{outFilePath}" 1> "{logFilePath}" 2>&1'
+    headers_crlf = " -headers $'{}'".format(r'\r\n'.join([f'{h}: {headers[h]}' for h in headers]))
+    return f"ffmpeg{proxy}{headers_crlf} -i '{inFileName}' -c copy '{outFilePath}' 1> '{logFilePath}' 2>&1"
 
 dotenv_file = dotenv.find_dotenv()
 dotenv.load_dotenv(dotenv_file, override=True)
