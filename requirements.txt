@@ -1,4 +1,6 @@
-requests
-flask
-pyngrok
+asyncio
+telethon
 python-dotenv
+hachoir
+cryptg
+pillow

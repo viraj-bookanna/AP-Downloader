@@ -15,18 +15,13 @@ install requirements for server (this maybe in a VPS)
 pip install -r requirements.txt
 ```
 
-install requirements in client machine (cmd in windows, termux in android)
-```
-pip install -r requirements-client.txt
-```
-
 ## How to use
-In the server
+Start the bot
 ```
-python3 main.py
+python3 bot.py
 ```
 
-In client
+Generating json file required for bot in client
 ```
 python3 client.py
 ```
