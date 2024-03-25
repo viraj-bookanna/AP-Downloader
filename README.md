@@ -1,31 +1,44 @@
 # AP-Downloader
 ap.lk downloader
 
-## Installation
-clone the repo
-```
-git clone https://github.com/viraj-bookanna/AP-Downloader
-```
-```
-cd AP-Downloader
-```
-
-install requirements for server (this maybe in a VPS)
-```
-pip install -r requirements.txt
-```
-
 ## How to use
-Start the bot
+1. Copy one of the following scripts accoording to your system
+2. Navigate to video watching page
+2. Type 'j' in search bar and paste the script
+3. Press enter and required data will be copied to clipboard automatically!
+
+For windows:
 ```
-python3 bot.py
+avascript:(function(){
+    fetch(window.location.href).then(r=>r.text()).then(r=>{
+        VideoStreamer=null;
+		var u=r.match(/(https?:\/\/.+?\/stream\/[0-9a-f-]+)/g)[0],t=document.title;
+        navigator.clipboard.writeText(`ffmpeg -i ${u} -c copy "${t}.mp4"`)
+		.then(()=>{
+            alert('ffmpeg command copied');
+        }).catch(e=>{
+            alert('Copy error: '+e.message);
+        })
+    }).catch(e=>{
+        alert('Error: '+e.message);
+    })
+})();
 ```
 
-Generating json file required for bot in client
+For android
 ```
-python3 client.py
+avascript:(function(){
+    fetch(window.location.href).then(r=>r.text()).then(r=>{
+        VideoStreamer=null;
+		var u=r.match(/(https?:\/\/.+?\/stream\/[0-9a-f-]+)/g)[0],t=document.title;
+        navigator.clipboard.writeText(u)
+		.then(()=>{
+            alert('URL copied, use 1DM app to download');
+        }).catch(e=>{
+            alert('Copy error: '+e.message);
+        })
+    }).catch(e=>{
+        alert('Error: '+e.message);
+    })
+})();
 ```
-
-## Video tutorial
-
-https://github.com/viraj-bookanna/AP-Downloader/assets/73843540/049d29e1-4fb0-413a-9b81-72f7f64f915a
